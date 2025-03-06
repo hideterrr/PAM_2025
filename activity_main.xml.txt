@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".MainActivity">
+
+    <!-- Romanian -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Romanian" />
+
+        <TextView
+            android:id="@+id/ScreenRomanian"
+            android:layout_width="306dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:gravity="right" />
+    </LinearLayout>
+
+    <!-- Arabic -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/ScreenRomanian"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Arabic" />
+
+        <TextView
+            android:id="@+id/ScreenArabic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="37dp"
+            android:gravity="right" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="3dp"
+        tools:layout_editor_absoluteY="164dp">
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ScreenArabic">
+
+
+        <Button
+            android:id="@+id/Button_1"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="20dp"
+            android:onClick="OnClickNumericButton"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/Button_2"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="20dp"
+            android:onClick="OnClickNumericButton"
+            android:text="2" />
+
+        <Button
+            android:id="@+id/Button_3"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="20dp"
+            android:onClick="OnClickNumericButton"
+            android:text="3" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="-35dp"
+        tools:layout_editor_absoluteY="480dp">
+
+        <Button
+            android:id="@+id/Button_CE"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="20dp"
+            android:onClick="OnClickNumericButton"
+            android:text="CE" />
+
+        <Button
+            android:id="@+id/Button_0"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="20dp"
+            android:onClick="OnClickNumericButton"
+            android:text="0" />
+
+        <Button
+            android:id="@+id/Button_b"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="20dp"
+            android:onClick="OnClickNumericButton"
+            android:text="<--" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="3dp"
+        tools:layout_editor_absoluteY="264dp">
+
+        <Button
+            android:id="@+id/Button_4"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="20dp"
+            android:onClick="OnClickNumericButton"
+            android:text="4" />
+
+        <Button
+            android:id="@+id/Button_5"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="20dp"
+            android:onClick="OnClickNumericButton"
+            android:text="5" />
+
+        <Button
+            android:id="@+id/Button_6"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="20dp"
+            android:onClick="OnClickNumericButton"
+            android:text="6" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="9dp"
+        tools:layout_editor_absoluteY="372dp">
+
+        <Button
+            android:id="@+id/Button_7"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="20dp"
+            android:onClick="OnClickNumericButton"
+            android:text="7" />
+
+        <Button
+            android:id="@+id/Button_8"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="20dp"
+            android:onClick="OnClickNumericButton"
+            android:text="8" />
+
+        <Button
+            android:id="@+id/Button_9"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="20dp"
+            android:onClick="OnClickNumericButton"
+            android:text="9" />
+    </LinearLayout>
+
+    <!-- Numeric Buttons Row 4 -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
