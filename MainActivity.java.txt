@@ -61,3 +61,89 @@ public class MainActivity extends AppCompatActivity {
         textViewRoman.setText("");
     }
 }
+
+
+
+poprawiony:
+package com.example.lab_02b;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
+
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
+public class MainActivity extends AppCompatActivity {
+
+    private StringBuilder arabicNumber = new StringBuilder();
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_main);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+    }
+
+    // Obsługa kliknięcia przycisków numerycznych
+    public void onClickNumericButton(View view) {
+        TextView textViewArabic = findViewById(R.id.ScreenArabic);
+        TextView textViewRomanian = findViewById(R.id.ScreenRomanian);
+        String text = arabicNumber.toString();
+
+        if (view.getId() == R.id.Button_9) text += "9";
+        if (view.getId() == R.id.Button_8) text += "8";
+        if (view.getId() == R.id.Button_7) text += "7";
+        if (view.getId() == R.id.Button_6) text += "6";
+        if (view.getId() == R.id.Button_5) text += "5";
+        if (view.getId() == R.id.Button_4) text += "4";
+        if (view.getId() == R.id.Button_3) text += "3";
+        if (view.getId() == R.id.Button_2) text += "2";
+        if (view.getId() == R.id.Button_1) text += "1";
+        if (view.getId() == R.id.Button_0) text += "0";
+
+        arabicNumber = new StringBuilder(text);
+        textViewArabic.setText(text);
+
+        // Konwersja liczby arabskiej na rzymską
+        if (!text.isEmpty()) {
+            int arabicValue = Integer.parseInt(text);
+            textViewRomanian.setText(Converter.convertToRoman(arabicValue));
+        }
+    }
+
+    // Obsługa usunięcia ostatniej cyfry
+    public void onBackspaceButtonClick(View view) {
+        if (arabicNumber.length() > 0) {
+            arabicNumber.deleteCharAt(arabicNumber.length() - 1);
+            TextView textViewArabic = findViewById(R.id.ScreenArabic);
+            textViewArabic.setText(arabicNumber.toString());
+
+            if (arabicNumber.length() > 0) {
+                int arabicValue = Integer.parseInt(arabicNumber.toString());
+                TextView textViewRomanian = findViewById(R.id.ScreenRomanian);
+                textViewRomanian.setText(Converter.convertToRoman(arabicValue));
+            } else {
+                TextView textViewRomanian = findViewById(R.id.ScreenRomanian);
+                textViewRomanian.setText("");
+            }
+        }
+    }
+
+    // Obsługa czyszczenia ekranu
+    public void onClearButtonClick(View view) {
+        arabicNumber.setLength(0);
+        TextView textViewArabic = findViewById(R.id.ScreenArabic);
+        textViewArabic.setText("");
+        TextView textViewRoman = findViewById(R.id.ScreenRomanian);
+        textViewRoman.setText("");
+    }
+}
