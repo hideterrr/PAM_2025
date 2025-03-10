@@ -188,3 +188,78 @@
     <!-- Numeric Buttons Row 4 -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+poprawiony: 
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".MainActivity">
+
+    <!-- Ekrany dla liczb -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/ScreenArabic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:hint="arabic" />
+
+        <EditText
+            android:id="@+id/ScreenRomanian"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:hint="romanian" />
+    </LinearLayout>
+
+    <!-- Układ klawiatury numerycznej -->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:columnCount="3"
+        app:layout_constraintTop_toBottomOf="@id/ScreenRomanian">
+
+        <Button android:id="@+id/Button_7" android:text="7" android:onClick="onClickNumericButton"/>
+        <Button android:id="@+id/Button_8" android:text="8" android:onClick="onClickNumericButton"/>
+        <Button android:id="@+id/Button_9" android:text="9" android:onClick="onClickNumericButton"/>
+        <Button android:id="@+id/Button_4" android:text="4" android:onClick="onClickNumericButton"/>
+        <Button android:id="@+id/Button_5" android:text="5" android:onClick="onClickNumericButton"/>
+        <Button android:id="@+id/Button_6" android:text="6" android:onClick="onClickNumericButton"/>
+        <Button android:id="@+id/Button_1" android:text="1" android:onClick="onClickNumericButton"/>
+        <Button android:id="@+id/Button_2" android:text="2" android:onClick="onClickNumericButton"/>
+        <Button android:id="@+id/Button_3" android:text="3" android:onClick="onClickNumericButton"/>
+        <Button android:id="@+id/Button_b" android:text="<-" android:onClick="onBackspaceButtonClick"/>
+        <Button android:id="@+id/Button_0" android:text="0" android:onClick="onClickNumericButton"/>
+        <Button android:id="@+id/Button_CE" android:text="CE" android:onClick="onClearButtonClick"/>
+    </GridLayout>
+
+    <!-- Układ przycisków rzymskich -->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:columnCount="3"
+        app:layout_constraintTop_toBottomOf="@id/Button_CE">
+
+        <Button android:text="I"/>
+        <Button android:text="V"/>
+        <Button android:text="X"/>
+        <Button android:text="L"/>
+        <Button android:text="M"/>
+        <Button android:text="D"/>
+    </GridLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
